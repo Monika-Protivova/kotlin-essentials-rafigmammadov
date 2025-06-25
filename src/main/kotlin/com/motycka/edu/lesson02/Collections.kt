@@ -31,9 +31,13 @@ fun collections() {
 
     println("\nWelcome to the Coffee Shop! Here is our menu:")
 
-    // TODO print the coffee menu items
+    coffeeMenu.forEach { println(it) }
 
-    // TODO create orders
+    val order1 = listOf(ESPRESSO, CAPPUCCINO, CAPPUCCINO, AMERICANO)
+    orders[1] = order1
+
+    val order2 = listOf(ESPRESSO, DOUBLE_ESPRESSO, FLAT_WHITE)
+    orders[2] = order2
 
     println("\nOrders placed:")
     orders.forEach {

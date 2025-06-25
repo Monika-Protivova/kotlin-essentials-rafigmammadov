@@ -26,9 +26,43 @@ fun conditionals() {
         println("Processing Order ID: $orderId")
         println("Items: $items")
 
-        val total: Double = TODO("Calculate total price for the order")
+        // 1. Get price based on item names
+        var totalPrice = 0.0
+        items.forEach { item ->
+            totalPrice += when (item) {
+                ESPRESSO -> ESPRESSO_PRICE
+                DOUBLE_ESPRESSO -> DOUBLE_ESPRESSO_PRICE
+                CAPPUCCINO -> CAPPUCCINO_PRICE
+                LATTE -> LATTE_PRICE
+                AMERICANO -> AMERICANO_PRICE
+                FLAT_WHITE -> FLAT_WHITE_PRICE
+                else -> 0.0
+            }
+        }
 
-        println("Total price for Order ID $orderId: $total\n")
+        // 2. Get the lowest price from a list of prices
+        val prices = items.map {
+            when (it) {
+                ESPRESSO -> ESPRESSO_PRICE
+                DOUBLE_ESPRESSO -> DOUBLE_ESPRESSO_PRICE
+                CAPPUCCINO -> CAPPUCCINO_PRICE
+                LATTE -> LATTE_PRICE
+                AMERICANO -> AMERICANO_PRICE
+                FLAT_WHITE -> FLAT_WHITE_PRICE
+                else -> 0.0
+            }
+        }
+        val lowestPrice = prices.minOrNull() ?: 0.0
+
+        // 3. Calculate total price for a list of items (already done in totalPrice)
+        
+        // 4. Calculate a discount if 3 or more items are ordered (the cheapest item is free)
+        if (items.size >= 3) {
+            totalPrice -= lowestPrice
+        }
+
+        // 5. Print the total price with a discount applied for each order
+        println("Total price for Order ID $orderId: $totalPrice\n")
     }
 }
 

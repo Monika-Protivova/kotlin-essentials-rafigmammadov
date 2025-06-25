@@ -1,23 +1,46 @@
 package com.motycka.edu.lesson03
 
+import kotlin.math.PI
 
-/*
- Implement an object called AreaCalculator with the following methods:
- - fun calculateRectangleArea(a: Double, b: Double): Double
- - fun calculateRectangleArea(a: Int, b: Int): Double
- - fun calculateCircleArea(r: Double): Double
- - fun calculateCircleArea(r: Int): Double
- - fun calculateTriangleArea(a: Double, b: Double): Double
- - fun calculateTriangleArea(a: Int, b: Int): Double
+object AreaCalculator {
 
- The class demonstrates static polymorphism by providing multiple methods with the same name but different parameter types (Int and Double).
- The check will tolerate 0.001 inaccuracy.
- */
+    // Calculate area of rectangle with Double parameters
+    fun calculateRectangleArea(a: Double, b: Double): Double {
+        return a * b
+    }
 
-/*
- Uncomment the main function to try the solution.
- */
+    // Calculate area of rectangle with Int parameters
+    fun calculateRectangleArea(a: Int, b: Int): Double {
+        return a.toDouble() * b.toDouble()
+    }
 
-//fun main() {
-//    println(AreaCalculator.calculateRectangleArea(5, 10))
-//}
+    // Calculate area of circle with Double radius
+    fun calculateCircleArea(r: Double): Double {
+        return PI * r * r
+    }
+
+    // Calculate area of circle with Int radius
+    fun calculateCircleArea(r: Int): Double {
+        return PI * r * r.toDouble()
+    }
+
+    // Calculate area of triangle with Double parameters
+    fun calculateTriangleArea(a: Double, b: Double): Double {
+        return 0.5 * a * b
+    }
+
+    // Calculate area of triangle with Int parameters
+    fun calculateTriangleArea(a: Int, b: Int): Double {
+        return 0.5 * a * b.toDouble()
+    }
+}
+
+// Uncomment to test the implementation
+fun main() {
+    println(AreaCalculator.calculateRectangleArea(5, 10)) // Int version
+    println(AreaCalculator.calculateRectangleArea(5.0, 10.0)) // Double version
+    println(AreaCalculator.calculateCircleArea(5)) // Int version
+    println(AreaCalculator.calculateCircleArea(5.0)) // Double version
+    println(AreaCalculator.calculateTriangleArea(5, 10)) // Int version
+    println(AreaCalculator.calculateTriangleArea(5.0, 10.0)) // Double version
+}

@@ -1,20 +1,21 @@
 package com.motycka.edu.lesson02
 
-
 fun evaluate(a: Double, b: Double) {
 
-    val sum = TODO()
-    val difference = TODO()
-    val product = TODO()
+    // Perform all the operations
+    val sum = a + b
+    val difference = a - b
+    val product = a * b
 
-    val isEqual = TODO()
-    val isNotEqual = TODO()
-    val aIsGreater = TODO()
-    val aIsLessOrEqual = TODO()
+    val isEqual = a == b
+    val isNotEqual = a != b
+    val aIsGreater = a > b
+    val aIsLessOrEqual = a <= b
 
-    val bothIsAboveZero = TODO()
-    val eitherIsAboveOrEqualZero = TODO()
+    val bothIsAboveZero = a > 0 && b > 0
+    val eitherIsAboveOrEqualZero = a >= 0 || b >= 0
 
+    // Print the results
     println("Sum: $sum")
     println("Difference: $difference")
     println("Product: $product")
