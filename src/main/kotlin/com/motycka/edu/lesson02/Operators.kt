@@ -2,7 +2,6 @@ package com.motycka.edu.lesson02
 
 fun evaluate(a: Double, b: Double) {
 
-    // Perform all the operations
     val sum = a + b
     val difference = a - b
     val product = a * b
@@ -12,10 +11,9 @@ fun evaluate(a: Double, b: Double) {
     val aIsGreater = a > b
     val aIsLessOrEqual = a <= b
 
-    val bothIsAboveZero = a > 0 && b > 0
-    val eitherIsAboveOrEqualZero = a >= 0 || b >= 0
+    val bothIsAboveZero = (a > 0) && (b > 0)
+    val eitherIsAboveOrEqualZero = (a >= 0) || (b >= 0)
 
-    // Print the results
     println("Sum: $sum")
     println("Difference: $difference")
     println("Product: $product")

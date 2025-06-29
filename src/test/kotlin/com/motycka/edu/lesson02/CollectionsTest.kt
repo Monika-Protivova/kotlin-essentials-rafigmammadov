@@ -1,3 +1,5 @@
+// Unit tests for coffee menu and order output
+
 package com.motycka.edu.lesson02
 
 import com.motycka.edu.captureStdout
@@ -25,7 +27,7 @@ class CollectionsTest : StringSpec({
     "should print menu items" {
         captureStdout {
             collections()
-        } shouldContain  """
+        } shouldContain """
             Welcome to the Coffee Shop! Here is our menu:
             Espresso
             Double Espresso
@@ -41,12 +43,10 @@ class CollectionsTest : StringSpec({
     "should print placed orders" {
         captureStdout {
             collections()
-        } shouldContain  """
+        } shouldContain """
             Orders placed:
             Order ID: 1, Items: [Espresso, Cappuccino, Cappuccino, Americano]
             Order ID: 2, Items: [Espresso, Double Espresso, Flat White]
         """.trimIndent()
     }
-
 })
-

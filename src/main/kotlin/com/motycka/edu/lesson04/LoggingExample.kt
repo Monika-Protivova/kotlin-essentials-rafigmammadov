@@ -1,8 +1,9 @@
+// Lesson 04 - Logging Basic Levels
 package com.motycka.edu.lesson04
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 
-private val logger = KotlinLogging.logger { }
+private val logger = KotlinLogging.logger {}
 
 fun main() {
     logger.error { "error message" }
